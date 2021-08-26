@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>冯驰的个人主页</title>
+    <link>https://mangoheart.github.io/</link>
+    <description>Recent content on 冯驰的个人主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 09 Aug 2021 17:45:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人简历</title>
+      <link>https://mangoheart.github.io/english/post/main_info/</link>
+      <pubDate>Mon, 09 Aug 2021 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/main_info/</guid>
+      
+        <description>主要信息 姓名： 冯驰
+性别： 男
+年龄： 26 (1995/07)
+籍贯： 浙江</description>
+      
+    </item>
+    
+    <item>
+      <title>轨迹跟踪项目</title>
+      <link>https://mangoheart.github.io/english/post/track_maker/</link>
+      <pubDate>Sun, 08 Aug 2021 14:59:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/track_maker/</guid>
+      
+        <description>关于动态目标的轨迹展示 二维平面轨迹展示 项目流程：
+ 一个较大空间内，布置4-6个不同角度的摄像头，分别获取画面 加入云从算法，捕捉动态物体并实现物体聚类（甚至人脸识别) &amp;ndash;该部分由云从提供算法完成 通过视频融合算法，将不同的画面融合成一个图像 利用标定物建立坐标转换体系，通过透视变换将坐标映射至融合后画面 通过对坐标点的过滤与整合，将轨迹按一定需求展现在全景平面图上。  本人参与项目最后一步，得到坐标数据后的过滤整合，并通过算法将大量散点平滑成曲线展示。</description>
+      
+    </item>
+    
+    <item>
+      <title>爬虫项目</title>
+      <link>https://mangoheart.github.io/english/post/crawl/</link>
+      <pubDate>Sat, 07 Aug 2021 17:35:31 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/crawl/</guid>
+      
+        <description>项目简介 本项目由公司前总经理承接，现已移交至复旦大学计算机学院维护(前领导于复旦大学任职教授)。
+由于爬虫属于灰色业务，怕被人拿去之后乱用找我头上所以源码就不贴了，大致思路整明白。 仅供学习参考！
+主体流程如下：
+ 中传悦动搭建数字图片保护平台-https://www.ccmgip.com/zh-CN/ipci 商家入住平台并上传原创图片申请保护 隐者公司通过水印技术对图片进行保护并存入数据库 全网（或针对指定网站）进行爬虫，获取图片并与受保护图片进行比对，对于疑似侵权图片发送预警报告  盈利模式为商家每年上传服务费，平台与隐者公司分成。</description>
+      
+    </item>
+    
+    <item>
+      <title>MGMP</title>
+      <link>https://mangoheart.github.io/english/post/mgmp/</link>
+      <pubDate>Fri, 06 Aug 2021 17:35:39 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/mgmp/</guid>
+      
+        <description>MGMP(Mulptile goals motion planning) 之前写论文就够瑞的了，这次就多说简单的人话吧。
+给定前提，一个环境中包括确定的站点和路径，机器人需要完成一次路径，在完成所有规定任务的情况下，规划最优路劲。
+最终环境情况如下：
+ 访问站点包括普通的站点与充能站点。 所有站点有开放时窗口。 所有的能量消耗与站点之间的移动消耗均已等价为时间消耗，在环境中提供。 最终选定蒙特卡洛树算法后，调节迭代次数实现该计算程度下的最优解。  对于这个问题的简化，参考来源于约克大学编写的关于OX棋的想法。</description>
+      
+    </item>
+    
+    <item>
+      <title>其他</title>
+      <link>https://mangoheart.github.io/english/post/others/</link>
+      <pubDate>Thu, 05 Aug 2021 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/others/</guid>
+      
+        <description>离职是因为之前的那和轨迹项目交付了，七月初在苏州云从完成交付，拖了一些时间因为315之后对于人脸数据监管开始变化，
+云从想用的这个技术暂时没有可以大量应用的场景所以当作技术储备了。
+所有手上的项目结束之后的一段时间差不多就是交接年假，然后八月初就离职了。
+本来想得是给自己放个暑假，顺便学习很久没怎么学习的算法再找找工作，但现在各种风险地区好像也消停不下来，
+一不小心路过中风险还要被关14天属实不划算。
+总体来说现在基础还是差了点，就像之前找工作的时候，我知道关系型数据库主键的做种，为什么要做不同的表然后用外键连接，
+但他问我什么是数据库三范式的时候我就不知道了。就非常尴尬。后来的工作中，基本都是接触不同的东西，感觉这些东西都是
+靠积累的直觉，就应该是这么干的。创业公司的团队，最需要的还是先有一些能用的东西，一开始就考虑什么分布式海量存储，百万并发，
+亿级检索，你这公司都不一定活到那时候。 但总干这些功能业务，我也疲倦了。到现在甚至接触不到大型项目，更不用说什么开发迭代管理。</description>
+      
+    </item>
+    
+    <item>
+      <title>相关证书</title>
+      <link>https://mangoheart.github.io/english/post/diploma/</link>
+      <pubDate>Fri, 09 Jul 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/diploma/</guid>
+      
+        <description>学历证书及成绩单如下 硕士期间 硕士毕业证 硕士成绩单 教育部认证 英国本科 英本毕业证 英本成绩单 国内本科 本科毕业证 本科学位证 本科成绩单 其他证明: 无邪教 无犯罪证明 </description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mangoheart.github.io/english/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/archives/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mangoheart.github.io/english/imprint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/imprint/</guid>
+      
+        <description>Legal Disclosure Information in accordance with the applicable law
+Jane Doe</description>
+      
+    </item>
+    
+  </channel>
+</rss>
