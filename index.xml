@@ -6,11 +6,11 @@
     <description>Recent content on 冯驰的个人主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 09 Aug 2021 17:45:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 08 Dec 2021 17:45:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>个人简历</title>
       <link>https://mangoheart.github.io/english/post/main_info/</link>
-      <pubDate>Mon, 09 Aug 2021 17:45:55 +0800</pubDate>
+      <pubDate>Wed, 08 Dec 2021 17:45:55 +0800</pubDate>
       
       <guid>https://mangoheart.github.io/english/post/main_info/</guid>
       
@@ -24,7 +24,7 @@
     <item>
       <title>轨迹跟踪项目</title>
       <link>https://mangoheart.github.io/english/post/track_maker/</link>
-      <pubDate>Sun, 08 Aug 2021 14:59:55 +0800</pubDate>
+      <pubDate>Wed, 08 Dec 2021 14:59:55 +0800</pubDate>
       
       <guid>https://mangoheart.github.io/english/post/track_maker/</guid>
       
@@ -34,9 +34,20 @@
     </item>
     
     <item>
+      <title>相关证书</title>
+      <link>https://mangoheart.github.io/english/post/diploma/</link>
+      <pubDate>Tue, 07 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/diploma/</guid>
+      
+        <description>学历证书及成绩单如下 硕士期间 硕士毕业证 硕士成绩单 教育部认证 英国本科 英本毕业证 英本成绩单 国内本科 本科毕业证 本科学位证 本科成绩单 其他证明: 无邪教 无犯罪证明 </description>
+      
+    </item>
+    
+    <item>
       <title>爬虫项目</title>
       <link>https://mangoheart.github.io/english/post/crawl/</link>
-      <pubDate>Sat, 07 Aug 2021 17:35:31 +0800</pubDate>
+      <pubDate>Tue, 07 Dec 2021 17:35:31 +0800</pubDate>
       
       <guid>https://mangoheart.github.io/english/post/crawl/</guid>
       
@@ -48,9 +59,20 @@
     </item>
     
     <item>
+      <title>GOLANG</title>
+      <link>https://mangoheart.github.io/english/post/go/</link>
+      <pubDate>Mon, 06 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/go/</guid>
+      
+        <description>GOLANG 相关 线程调度 GMP模式 M:thread绑定cpu P: processor作为调度器分配goroutine # goamxproces可以预设个数 G: 代表需要处理的进程</description>
+      
+    </item>
+    
+    <item>
       <title>MGMP</title>
       <link>https://mangoheart.github.io/english/post/mgmp/</link>
-      <pubDate>Fri, 06 Aug 2021 17:35:39 +0800</pubDate>
+      <pubDate>Mon, 06 Dec 2021 17:35:39 +0800</pubDate>
       
       <guid>https://mangoheart.github.io/english/post/mgmp/</guid>
       
@@ -64,11 +86,11 @@
     <item>
       <title>其他</title>
       <link>https://mangoheart.github.io/english/post/others/</link>
-      <pubDate>Thu, 05 Aug 2021 17:45:55 +0800</pubDate>
+      <pubDate>Sun, 05 Dec 2021 17:45:55 +0800</pubDate>
       
       <guid>https://mangoheart.github.io/english/post/others/</guid>
       
-        <description>离职是因为之前的那和轨迹项目交付了，七月初在苏州云从完成交付，拖了一些时间因为315之后对于人脸数据监管开始变化，
+        <description>离职原因 离职是因为之前的那和轨迹项目交付了，七月初在苏州云从完成交付，拖了一些时间因为315之后对于人脸数据监管开始变化，
 云从想用的这个技术暂时没有可以大量应用的场景所以当作技术储备了。
 所有手上的项目结束之后的一段时间差不多就是交接年假，然后八月初就离职了。 本来想得是给自己放个暑假，顺便学习很久没怎么学习的算法再找找工作，但现在各种风险地区好像也消停不下来，
 一不小心路过中风险还要被关14天属实不划算。
@@ -78,13 +100,25 @@
     </item>
     
     <item>
-      <title>相关证书</title>
-      <link>https://mangoheart.github.io/english/post/diploma/</link>
-      <pubDate>Fri, 09 Jul 2021 17:43:12 +0800</pubDate>
+      <title>mysql</title>
+      <link>https://mangoheart.github.io/english/post/mysql/</link>
+      <pubDate>Wed, 01 Dec 2021 17:45:55 +0800</pubDate>
       
-      <guid>https://mangoheart.github.io/english/post/diploma/</guid>
+      <guid>https://mangoheart.github.io/english/post/mysql/</guid>
       
-        <description>学历证书及成绩单如下 硕士期间 硕士毕业证 硕士成绩单 教育部认证 英国本科 英本毕业证 英本成绩单 国内本科 本科毕业证 本科学位证 本科成绩单 其他证明: 无邪教 无犯罪证明 </description>
+        <description>mysql 梳理 b树和b+树 b树叶子节点不存储数据，通过多叉树指向底层数据，叶子节点之间不存在链表 b+树枝节点存储数据，底层叶子节点按序排列，且存在双向链表，利于范围查找。
+聚簇索引 与 非聚簇索引 聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb） 有隐藏列 trx_id: 用来存储每次对某条聚簇索引记录进行修改时候的事务id roll_point: 每次修改时，老版本写入undo日志，该指针指向当前状态的上一个版本获得信息</description>
+      
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://mangoheart.github.io/english/post/redis/</link>
+      <pubDate>Wed, 01 Dec 2021 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/redis/</guid>
+      
+        <description>redis 梳理 基本数据类型 五大基本数据类型： string， list， hash， set， sortedset 其他包括： 地理数据类型geospatial， hyperloglog统计，bitmap位图</description>
       
     </item>
     

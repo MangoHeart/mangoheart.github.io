@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html  dir="ltr" lang="en" data-theme=""><head>
-    <title> Chi Feng </title>
+    <title> Chi Feng | GOLANG </title>
 
     
     <meta charset="utf-8"><meta name="generator" content="Hugo 0.84.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -31,10 +31,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
-    <link rel="canonical" href="/english/">
+    <link rel="canonical" href="/english/post/go/">
 
     
-    <link rel="alternate" type="application/rss+xml" href="/english/index.xml" title="冯驰的个人主页" />
     
     
     
@@ -53,8 +52,8 @@
                 crossorigin="anonymous"></script>
     
     <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content=""/>
-<meta name="twitter:description" content="差不多得了"/>
+<meta name="twitter:title" content="GOLANG"/>
+<meta name="twitter:description" content="GOLANG 相关 线程调度 GMP模式 M:thread绑定cpu P: processor作为调度器分配goroutine # goamxproces可以预设个数 G: 代表需要处理的进程"/>
 
 
     
@@ -121,47 +120,126 @@
     <main>
         <div class="autopagerize_page_element">
             <div class="content">
-    <div class="archive  animated fadeInDown ">
-        <ul class="list-with-title">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
             
-                <div class="listing-title">2021</div>
+            <div class="post-title">
+                <h3>GOLANG</h3>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="/english/post/" title="Posts">Posts</a>
-                                <div class="post-time"><span class="date"> Dec 8 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
+            </div>
+
+            <h1 id="golang-相关">GOLANG 相关</h1>
+<h3 id="线程调度">线程调度</h3>
+<p>GMP模式
+M:thread绑定cpu
+P: processor作为调度器分配goroutine # goamxproces可以预设个数
+G: 代表需要处理的进程</p>
+<p>复用线程：
+work steaking
+hand off</p>
+<p>利用并行：
+GOMAXPROCS限定P的个数</p>
+<p>抢占：
+co-routine: 占用cup后，主动释放其他的co-routine才能进行绑定
+go-routine: 最多占用10ms，其他go-routine可以进行抢占</p>
+<p>全局队列：
+work steaking后空闲的P可以从全局队列获取G</p>
+<h3 id="goroutine">goroutine</h3>
+<p>可以用retur结束
+子goroutine中，可以用runti.Goexit()结束所有</p>
+<h3 id="channel">channel</h3>
+<p>c := make(chan int， buffer_num)
+c &lt;- i
+data, ok := &lt;- c
+len(c) 当前长度
+cap(c) 容量大小
+有缓存/无缓存
+close(c)</p>
+<p>for data := range c{
+#等待c传送数据
+}</p>
+<p>select{
+case chan1 &lt;- data:
+#c可写即执行
+case &lt;- data:</p>
+<pre><code>default:
+</code></pre>
+<p>}</p>
+<h3 id="变量内置结构">变量内置结构</h3>
+<p>变量包括： type  value -&gt;  pair
+type： static type/ concrete type
+a = asd
+// pair&lt;statictype:string, vlue:&ldquo;asd&rdquo;&gt;
+无论值赋给谁，pair永远不变</p>
+<h3 id="切片与拷贝">切片与拷贝</h3>
+<p>s1 = s[0:2] # 切片，指向同一地址
+copy(s2, s)</p>
+<h3 id="函数值传递">函数值传递</h3>
+<p>以结构体为例：
+可以传参数，形参且只是拷贝，函数内修改无效
+也可以传地址，函数内修改有效
+type Book srtuct {
+name string
+id int
+}
+var book1 book
+book1.name = &ldquo;golang&rdquo;
+book1.id = 1
+func change1(book Book){
+book.name = &ldquo;python&rdquo;
+}
+func change2(book &amp;Book){
+book.name = &ldquo;c++&rdquo;
+}</p>
+<p>change1(book1) # 修改无效
+change2(*book1) #修改有效</p>
+<h3 id="函数特征">函数特征</h3>
+<h4 id="封装">封装：</h4>
+<p>以包为单位，包内无区别
+首字母为大写则对其他包开放，小写不开放</p>
+<h4 id="继承">继承</h4>
+<p>例：
+type Human struct{
+name string
+gender string
+}</p>
+<p>h := Human{&ldquo;asd&rdquo;, &ldquo;male&rdquo;}</p>
+<p>func (this *Human) Eat() {
+fmt.println(&ldquo;Human eat&hellip;&quot;)
+}
+type Superman struct{
+Human # 直接写即调用继承
+level int
+}</p>
+<p>s := Superman{Human{&ldquo;qwe&rdquo;, &ldquo;female&rdquo;}, 123}</p>
+<p>//重定义
+func (this *Superman) Eat() {
+fmt.println(&ldquo;Superman eat&hellip;&quot;)
+}</p>
+<p>//子类新定义
+func (this *Superman) Fly() {
+fmt.println(&ldquo;Superman fly&hellip;&quot;)
+}</p>
+<h4 id="多态">多态</h4>
+<p>interface 本质是一个指针</p>
+<h3 id="gopathgomodule">gopath/gomodule</h3>
+<p>gopath无版本控制概念
+无法同步一致第三方版本号</p>
+<p>gomodule
+go env
+环境变量的设置
+代理下载节点等等</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
                 
-            
-                <div class="listing-title">2019</div>
                 
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="/english/archives/" title=""></a>
-                                <div class="post-time"><span class="date"> May 28 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-                <div class="listing-title">0001</div>
-                
-                    <ul class="listing">
-                        <div class="listing-item">
-                            <div class="listing-post"><a href="/english/imprint/" title=""></a>
-                                <div class="post-time"><span class="date"> Jan 1 
-                                                                            </span></div>
-                            </div>
-                        </div>
-                    </ul>
-                
-            
-        </ul>
+            </div>
+        </div>
+
+        
     </div>
+
 
             </div>
         </div>
