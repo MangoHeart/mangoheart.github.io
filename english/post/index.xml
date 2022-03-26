@@ -6,7 +6,19 @@
     <description>Recent content in Posts on 冯驰的个人主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 08 Dec 2021 17:45:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/english/post/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 25 Mar 2022 14:59:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/english/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>极氪 api扫描项目</title>
+      <link>https://mangoheart.github.io/english/post/zeekr/</link>
+      <pubDate>Fri, 25 Mar 2022 14:59:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/zeekr/</guid>
+      
+        <description>极氪 信息安全 自动化扫描项目 - API扫描 信息安全中台介绍 中台总览 中台概览相关数据 大致页面如下，点击指定项目，查看与之相关的扫描项目信息。
+本人主要负责 API扫描平台 后端开发。</description>
+      
+    </item>
+    
     <item>
       <title>个人简历</title>
       <link>https://mangoheart.github.io/english/post/main_info/</link>
@@ -16,7 +28,7 @@
       
         <description>主要信息 姓名： 冯驰
 性别： 男
-年龄： 26 (1995/07)
+年龄： 27 (1995/07)
 籍贯： 浙江</description>
       
     </item>
@@ -66,6 +78,17 @@
       <guid>https://mangoheart.github.io/english/post/go/</guid>
       
         <description>GOLANG 相关 线程调度 GMP模式 M:thread绑定cpu P: processor作为调度器分配goroutine # goamxproces可以预设个数 G: 代表需要处理的进程</description>
+      
+    </item>
+    
+    <item>
+      <title>算法相关</title>
+      <link>https://mangoheart.github.io/english/post/algorithm/</link>
+      <pubDate>Mon, 06 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/algorithm/</guid>
+      
+        <description>算法小结 最长无重复子串 s = &amp;lsquo;asdf&amp;rsquo; l=r=0 n = len(s) d = {} res = 0 while r &amp;lt; n: if s[i] in dic and d[s[r]] &amp;gt;= l: l = d[s[i]] + 1 d[s[r]] = r res = max(res, r-l+1) r += 1 return res</description>
       
     </item>
     
