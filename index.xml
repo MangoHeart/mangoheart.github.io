@@ -6,7 +6,21 @@
     <description>Recent content on 冯驰的个人主页</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 25 Mar 2022 14:59:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Mar 2022 17:45:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人简历</title>
+      <link>https://mangoheart.github.io/english/post/main_info/</link>
+      <pubDate>Sat, 26 Mar 2022 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/main_info/</guid>
+      
+        <description>主要信息 姓名： 冯驰
+性别： 男
+年龄： 27 (1995/07)
+籍贯： 浙江</description>
+      
+    </item>
+    
     <item>
       <title>极氪 api扫描项目</title>
       <link>https://mangoheart.github.io/english/post/zeekr/</link>
@@ -16,20 +30,6 @@
       
         <description>极氪 信息安全 自动化扫描项目 - API扫描 信息安全中台介绍 中台总览 中台概览相关数据 大致页面如下，点击指定项目，查看与之相关的扫描项目信息。
 本人主要负责 API扫描平台 后端开发。</description>
-      
-    </item>
-    
-    <item>
-      <title>个人简历</title>
-      <link>https://mangoheart.github.io/english/post/main_info/</link>
-      <pubDate>Wed, 08 Dec 2021 17:45:55 +0800</pubDate>
-      
-      <guid>https://mangoheart.github.io/english/post/main_info/</guid>
-      
-        <description>主要信息 姓名： 冯驰
-性别： 男
-年龄： 27 (1995/07)
-籍贯： 浙江</description>
       
     </item>
     
@@ -113,12 +113,7 @@
       
       <guid>https://mangoheart.github.io/english/post/others/</guid>
       
-        <description>离职原因 离职是因为之前的那和轨迹项目交付了，七月初在苏州云从完成交付，拖了一些时间因为315之后对于人脸数据监管开始变化，
-云从想用的这个技术暂时没有可以大量应用的场景所以当作技术储备了。
-所有手上的项目结束之后的一段时间差不多就是交接年假，然后八月初就离职了。 本来想得是给自己放个暑假，顺便学习很久没怎么学习的算法再找找工作，但现在各种风险地区好像也消停不下来，
-一不小心路过中风险还要被关14天属实不划算。
-总体来说现在基础还是差了点，就像之前找工作的时候，我知道关系型数据库主键的作用，为什么要做不同的表然后用外键连接， 但他问我什么是数据库三范式的时候我就给忘了，就非常尴尬。
-后来的工作中，基本都是接触不同的东西，感觉这些东西都是靠积累的直觉，就应该是这么干的。创业公司的团队， 最需要的还是先有一些能用的东西，一开始就考虑什么分布式海量存储，百万并发，亿级检索，你这公司都不一定能活得到那时候啊。 但总干这些功能业务，我也疲倦了。到现在甚至接触不到大型项目，更不用说什么开发迭代管理。</description>
+        <description>离职原因 2022/03 更新 作为创业公司，从十二月底第一天入职起就开始赶进度（早上入职培训签合同下午就测供应商接口） 公司氛围了解的不是很多但部门确实都很赶。赶到三月初终于第一版差不多成型，最后那几天基本都是 十点甚至十二点多赶着做。之前离职想找个大公司至少想明白开发流程是什么样的，正规的公司是怎么干活的 但三个多月甚至没有一个产品经理跟需求，碰上问题无论是技术还是行政的找个人都要半天，三个月不到部门工位换了又换 呆过等电梯半个小时都不一定上得去的21楼，搬到过即将装修没人愿意去的偏区1楼电教室，后来这地方要装修又搬到隔壁 另一个教室每天听装修声，最后又搬到了新大楼吸甲醛。以为稳定了工位会一切都会稳定下了，可惜，还是依旧没有规划 甚至更加混乱。一个花了大心思研发的平台，推出去的时候都不受人待见，所有的愿景都只基于自己部门的判断，充斥着 大量的不确定性。刚好我房租到期了，差不多也到了转正的时期，就直接开溜了。 不过好在大小领导聊了几次也痛快放我走了。虽然不知道是不是真的，但他们至少表面表示出了十分想让我留下来的意思。 刚提的那天跟已经被踢的前同事聊天，他说领导不会放我走的，因为他们内部觉得，我是个能干活的人，而且非常便宜。 虽然知道自己水平确实不太彳亍，之前入职的时候也基本不怎在乎待遇，但听到这样的话多少还是有丶不舒服的。 后来聊天的时候比较失望的一点，是他们所有的内容我都能预料到，一点点超乎我预期的东西都没有。 然后的俩礼拜基本就是在交接，流程挺简单的一个平台以为交接很快，但要完全教会一个外包，主管的要求是让他有 &amp;quot;独立debug&amp;quot;的能力，那我是这尽心尽力了。我本来也在想独立debug不是一个从业者最基本的能力么.</description>
       
     </item>
     
