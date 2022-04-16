@@ -53,7 +53,7 @@
     
     <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="算法相关"/>
-<meta name="twitter:description" content="算法小结 最长无重复子串 s = &lsquo;asdf&rsquo; l=r=0 n = len(s) d = {} res = 0 while r &lt; n: if s[i] in dic and d[s[r]] &gt;= l: l = d[s[i]] &#43; 1 d[s[r]] = r res = max(res, r-l&#43;1) r &#43;= 1 return res"/>
+<meta name="twitter:description" content="算法小结 最长无重复子串  s = &#39;asdf l=r=0 n = len(s) d = {} res = 0 while r &lt; n: if s[i] in dic and d[s[r]] &gt;= l: l = d[s[i]] &#43; 1 d[s[r]] = r res = max(res, r-l&#43;1) r &#43;= 1 return res 最长回文子串 双指针，从头遍历 每次分单/双数讨论并向外拓展回文"/>
 
 
     
@@ -130,53 +130,57 @@
 
             <h1 id="算法小结">算法小结</h1>
 <h3 id="最长无重复子串">最长无重复子串</h3>
-<p>s = &lsquo;asdf&rsquo;
-l=r=0
-n = len(s)
-d = {}
-res = 0
-while r &lt; n:
-if s[i] in dic and d[s[r]] &gt;= l:
-l = d[s[i]] + 1
-d[s[r]] = r
-res = max(res, r-l+1)
-r += 1
-return res</p>
-<h3 id="最长回文子串">最长回文子串</h3>
+<pre tabindex="0"><code>    s = 'asdf
+    l=r=0
+    n = len(s)
+    d = {}
+    res = 0
+    while r &lt; n:
+        if s[i] in dic and d[s[r]] &gt;= l:
+            l = d[s[i]] + 1
+        d[s[r]] = r
+        res = max(res, r-l+1)
+        r += 1
+    return res
+</code></pre><h3 id="最长回文子串">最长回文子串</h3>
 <p>双指针，从头遍历
-每次分单/双数讨论并向外拓展回文
-def extending(s: str, l:int, r: int):
-while l &gt;= 0 and r &lt;=len(s) and s[l] == s[r]:
-l -= 1
-r += 1</p>
-<pre><code>return l+1, r-1
-</code></pre>
-<p>a, b = 0, 0</p>
-<p>for i in range(len(s)):
-l1, r1 = extending(s, i, i) # 单点为中心
-l2, r2 = extending(s, i, i+1) # 完全对称
-if r1 - l1 &gt; b-a:
-a, b = l1, r1
-if r2 - l2 &gt; b-a:
-a, b = l2, r</p>
-<p>return s[a:b+1]</p>
-<h3 id="最大容器">最大容器</h3>
+每次分单/双数讨论并向外拓展回文</p>
+<pre tabindex="0"><code>def extending(s: str, l:int, r: int):
+    while l &gt;= 0 and r &lt;=len(s) and s[l] == s[r]:
+        l -= 1
+        r += 1
+
+    return l+1, r-1
+
+a, b = 0, 0
+
+for i in range(len(s)):
+    l1, r1 = extending(s, i, i) # 单点为中心
+    l2, r2 = extending(s, i, i+1) # 完全对称
+    if r1 - l1 &gt; b-a:
+        a, b = l1, r1
+    if r2 - l2 &gt; b-a:
+        a, b = l2, r
+    
+return s[a:b+1]
+</code></pre><h3 id="最大容器">最大容器</h3>
 <p>双指针遍历，头/尾靠拢
 目标值 = 数组长度 * 两边高度取小
 高度不确定，所以从长度入手
-双变量定性分析，从可控的入手
-high = [1,2,3,4,5,6]
+双变量定性分析，从可控的入手</p>
+<pre tabindex="0"><code>high = [1,2,3,4,5,6]
 l = 0
 r = len(list) -1
 res = 0
 while l &lt; r:
-if high[l] &lt; high[r]:
-res = max(res, high[l]<em>(r-l))
-l += 1
-else:
-res = max(res, high[r]</em>(r-l))
-r -= 1</p>
-</div>
+    if high[l] &lt; high[r]:
+        res = max(res, high[l]*(r-l))
+        l += 1
+    else:
+        res = max(res, high[r]*(r-l))
+        r -= 1
+
+</code></pre></div>
         <div class="post-footer">
             <div class="info">
                 

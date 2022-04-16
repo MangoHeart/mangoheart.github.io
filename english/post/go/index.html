@@ -145,7 +145,7 @@ go-routine: 最多占用10ms，其他go-routine可以进行抢占</p>
 <p>全局队列：
 work steaking后空闲的P可以从全局队列获取G</p>
 <h3 id="goroutine">goroutine</h3>
-<p>可以用retur结束
+<p>可以用return结束
 子goroutine中，可以用runti.Goexit()结束所有</p>
 <h3 id="channel">channel</h3>
 <p>c := make(chan int， buffer_num)
@@ -177,50 +177,54 @@ copy(s2, s)</p>
 <h3 id="函数值传递">函数值传递</h3>
 <p>以结构体为例：
 可以传参数，形参且只是拷贝，函数内修改无效
-也可以传地址，函数内修改有效
-type Book srtuct {
-name string
-id int
+也可以传地址，函数内修改有效</p>
+<pre tabindex="0"><code>type Book srtuct {
+    name string
+    id int
 }
 var book1 book
-book1.name = &ldquo;golang&rdquo;
+book1.name = &quot;golang&quot;
 book1.id = 1
 func change1(book Book){
-book.name = &ldquo;python&rdquo;
+    book.name = &quot;python&quot;
 }
 func change2(book &amp;Book){
-book.name = &ldquo;c++&rdquo;
-}</p>
-<p>change1(book1) # 修改无效
+    book.name = &quot;c++&quot;
+}
+</code></pre><p>change1(book1)  #修改无效<br>
 change2(*book1) #修改有效</p>
 <h3 id="函数特征">函数特征</h3>
 <h4 id="封装">封装：</h4>
 <p>以包为单位，包内无区别
 首字母为大写则对其他包开放，小写不开放</p>
 <h4 id="继承">继承</h4>
-<p>例：
-type Human struct{
-name string
-gender string
-}</p>
-<p>h := Human{&ldquo;asd&rdquo;, &ldquo;male&rdquo;}</p>
-<p>func (this *Human) Eat() {
-fmt.println(&ldquo;Human eat&hellip;&quot;)
+<p>例：</p>
+<pre tabindex="0"><code>type Human struct{
+    name string
+    gender string
+}
+
+h := Human{&quot;asd&quot;, &quot;male&quot;}
+
+func (this *Human) Eat() {
+    fmt.println(&quot;Human eat...&quot;)
 }
 type Superman struct{
-Human # 直接写即调用继承
-level int
-}</p>
-<p>s := Superman{Human{&ldquo;qwe&rdquo;, &ldquo;female&rdquo;}, 123}</p>
-<p>//重定义
-func (this *Superman) Eat() {
-fmt.println(&ldquo;Superman eat&hellip;&quot;)
-}</p>
-<p>//子类新定义
+    Human # 直接写即调用继承
+    level int
+}
+
+s := Superman{Human{&quot;qwe&quot;, &quot;female&quot;}, 123}
+</code></pre><p>//重定义</p>
+<pre tabindex="0"><code>func (this *Superman) Eat() {
+    fmt.println(&quot;Superman eat...&quot;)
+}
+
+//子类新定义
 func (this *Superman) Fly() {
-fmt.println(&ldquo;Superman fly&hellip;&quot;)
-}</p>
-<h4 id="多态">多态</h4>
+    fmt.println(&quot;Superman fly...&quot;)
+}
+</code></pre><h4 id="多态">多态</h4>
 <p>interface 本质是一个指针</p>
 <h3 id="gopathgomodule">gopath/gomodule</h3>
 <p>gopath无版本控制概念
