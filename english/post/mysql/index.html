@@ -133,8 +133,9 @@
 <p>b树叶子节点不存储数据，通过多叉树指向底层数据，叶子节点之间不存在链表
 b+树枝节点存储数据，底层叶子节点按序排列，且存在双向链表，利于范围查找。</p>
 <h3 id="聚簇索引-与-非聚簇索引">聚簇索引 与 非聚簇索引</h3>
-<p>聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb）
-有隐藏列 trx_id: 用来存储每次对某条聚簇索引记录进行修改时候的事务id
+<p>聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb）<br>
+有隐藏列<br>
+trx_id: 用来存储每次对某条聚簇索引记录进行修改时候的事务id<br>
 roll_point: 每次修改时，老版本写入undo日志，该指针指向当前状态的上一个版本获得信息</p>
 <p>非聚簇索引将地址与数据分开，由地址指向数据，需要多一次IO。（Myisam)</p>
 <h3 id="索引的本质">索引的本质</h3>
@@ -164,6 +165,8 @@ extra:
 行锁
 支持事务
 聚簇索引</p>
+<h3 id="事务本质">事务本质</h3>
+<p>事务，即一组操作的集合。</p>
 <h3 id="事务实现">事务实现</h3>
 <ol>
 <li>找到数据，将该页缓存到buffer pool中</li>
@@ -173,8 +176,6 @@ extra:
 <li>如果事务提交，将redolog持久化，后续机制将buffer pool中修改的数据持久化到磁盘</li>
 <li>如果回滚，利用undolog回滚</li>
 </ol>
-<h3 id="事务相关">事务相关</h3>
-<p>事务，即一组操作的集合。</p>
 <h4 id="性质acid">性质：ACID</h4>
 <p>A：atomic 原子性
 所有操作成功，或者所有操作失败。</p>
@@ -186,16 +187,31 @@ extra:
 <p>D： duration 持久性
 内存操作需要持久化到本地磁盘，一旦更改即永久生效。</p>
 <h4 id="事务的隔离级别">事务的隔离级别：</h4>
-<p>read uncommit 读未提交  可能会出现脏读</p>
-<p>read commit 读已提交 同一个事务中读取同一个值可能会不同
-例；
-A  读x=200         读x=300  COMMIT
-B          写x=300 commit</p>
-<p>利用MVCC实现
-rc中，每次select重新活动区一个独立的readview</p>
-<p>rd中第一次生成之后，所有的读操作都复用初次获取的readview</p>
-<p>repeatable read 可重复读 可能会幻读 mysql默认级别</p>
+<ol>
+<li>
+<p>read uncommit 读未提交  可能会出现脏读<br>
+同一个事务中读取同一个值可能会不同<br>
+例：<br>
+A  读x=200 &mdash;&mdash;&mdash;读x=300  COMMIT  此处 两个x对应不上<br>
+B  &mdash;&mdash;&mdash;&mdash;写x=300 commit</p>
+</li>
+<li>
+<p>read commit 读已提交 不可重复读
+利用MVCC实现<br>
+rc中，每次select重新活动区一个独立的readview
+rd中第一次生成之后，所有的读操作都复用初次获取的readview</p>
+</li>
+<li>
+<p>repeatable read 可重复读 可能会幻读 mysql默认级别<br>
+事务内的读取保持一致性,可能会在范围读取时获得不一致的数据量<br>
+例：<br>
+事务A： count id in range(1,100) = 10&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- count again = 11<br>
+事务B：  &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;insert id = 10 commit</p>
+</li>
+<li>
 <p>seriesable 序列化</p>
+</li>
+</ol>
 <h3 id="一致性">一致性</h3>
 <p>事务记录redolog</p>
 <h3 id="mvcc-multiple-version-concurrent-control-多版本并发控制">MVCC multiple version concurrent control 多版本并发控制</h3>

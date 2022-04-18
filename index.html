@@ -312,7 +312,8 @@
             </div>
             <div class="post-content">
                 <div class="p_part">
-                    <p>算法小结 最长无重复子串  s = 'asdf l=r=0 n = len(s) d = {} res = 0 while r &lt; n: if s[i] in dic and d[s[r]] &gt;= l: l = d[s[i]] + 1 d[s[r]] = r res = max(res, r-l+1) r += 1 return res 最长回文子串 双指针，从头遍历 每次分单/双数讨论并向外拓展回文</p>
+                    <p>算法小结 dfs 深搜 遍历并加入res
+class TreeNode: def __init__(self, val=0, left=None, right=None): self.</p>
                     </div>
             </div>
 
@@ -364,18 +365,12 @@
         <div class="post  animated fadeInDown ">
             
             <div class="post-title">
-                <h3><a href="/english/post/others/">其他</a>
+                <h3><a href="/english/post/redis/">redis</a>
                 </h3>
             </div>
             <div class="post-content">
                 <div class="p_part">
-                    <p>离职原因 2022/03 更新 作为创业公司，从十二月底第一天入职起就开始赶进度（早上入职培训签合同下午就测供应商接口）
-公司氛围了解的不是很多但部门确实都很赶。赶到三月初终于第一版差不多成型，最后那几天基本都是十点甚至十二点多赶着做。
-之前离职想找个大公司至少想明白开发流程是什么样的，正规的公司是怎么干活的,但三个多月甚至没有一个产品经理跟需求.
-碰上问题无论是技术还是行政的找个人都要半天，三个月不到部门工位换了又换,就感觉一直在流浪。
-呆过等电梯半个小时都不一定上得去的21楼，搬到过即将装修没人愿意去的偏区1楼电教室，后来这地方要装修又搬到隔壁
-另一个教室每天听装修声，最后又搬到了新大楼吸甲醛。以为稳定了工位会一切都会稳定下了，可惜，还是依旧没有规划
-甚至更加混乱。一个花了大心思研发的平台，推出去的时候都不受人待见，所有的愿景都只基于自己部门的判断，充斥着</p>
+                    <p>redis 梳理 基本数据类型 五大基本数据类型： string， list， hash， set， sortedset 其他包括： 地理数据类型geospatial， hyperloglog统计，bitmap位图</p>
                     </div>
             </div>
 
@@ -403,7 +398,8 @@
             <div class="post-content">
                 <div class="p_part">
                     <p>mysql 梳理 b树和b+树 b树叶子节点不存储数据，通过多叉树指向底层数据，叶子节点之间不存在链表 b+树枝节点存储数据，底层叶子节点按序排列，且存在双向链表，利于范围查找。
-聚簇索引 与 非聚簇索引 聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb） 有隐藏列 trx_id: 用来存储每次对某条聚簇索引记录进行修改时候的事务id roll_point: 每次修改时，老版本写入undo日志，该指针指向当前状态的上一个版本获得信息</p>
+聚簇索引 与 非聚簇索引 聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb）
+有隐藏列</p>
                     </div>
             </div>
 
