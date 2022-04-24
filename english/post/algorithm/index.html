@@ -174,7 +174,12 @@ def levelOrder(self, root: TreeNode) -&gt; List[List[int]]:
         res.append(cur_row)
     return res
 
-</code></pre><h3 id="最长无重复子串">最长无重复子串</h3>
+</code></pre><h1 id="有环链表">有环链表</h1>
+<p>快指针-走两步<br>
+慢指针-走一步<br>
+不为空，且重合，即有环，停止<br>
+快指针回头，都变成慢指针走一步，重逢即入环节点</p>
+<h3 id="最长无重复子串">最长无重复子串</h3>
 <pre tabindex="0"><code>s = 'asdf'
 l=r=0
 n = len(s)
