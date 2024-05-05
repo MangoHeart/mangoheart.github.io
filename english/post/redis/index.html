@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Chi Feng | redis </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.92.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="redis">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.cf3bc06a9d8faea75a336d59c26f1f005581c5797c997ea627faf957fef00abc.css"
+        integrity="sha256-zzvAap2PrqdaM21Zwm8fAFWBxXl8mX6mJ/r5V/7wCrw="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link rel="canonical" href="/english/post/redis/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.98b79432dfa53ecc682fb19247f797a316f8cbca9d5455c8bb22e58fc694b675.js"
+            integrity="sha256-mLeUMt&#43;lPsxoL7GSR/eXoxb4y8qdVFXIuyLlj8aUtnU="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="redis"/>
+<meta name="twitter:description" content="redis"/>
+
+
+    
+
+</head>
+<body>
+<header><div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <nav>
+        <ul class="nav__list" id="navMenu">
+            <div class="nav__links">
+                
+                
+                
+            </div>
+            <li>
+                
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>
+<div class="wrapper">
+    <aside><div class="sidebar animated fadeInDown ">
+    <div class="sidebar__content">
+        <div class="logo-title">
+            <div class="title">
+                <img src="/images/avatar.jpg" alt="profile picture">
+                <h3 title=""><a href="/">冯  驰</a></h3>
+                <div class="description">
+                    <p>差不多得了</p>
+                </div>
+            </div>
+        </div>
+        <ul class="social-links">
+            
+        </ul>
+    </div><footer class="footer footer--sidebar">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></div>
+</aside>
+    <main>
+        <div class="autopagerize_page_element">
+            <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>redis</h3>
+                
+            </div>
+
+            <h1 id="redis-梳理">redis 梳理</h1>
+<h3 id="基本数据类型">基本数据类型</h3>
+<p>五大基本数据类型： string， list， hash， set， sortedset
+其他包括： 地理数据类型geospatial， hyperloglog统计，bitmap位图</p>
+<h3 id="线程控制">线程控制</h3>
+<p>可以开启多线程，但是没必要
+单线程也可以很快，读写约10w/s</p>
+<h3 id="锁类型">锁类型</h3>
+<p>可以实现乐观锁</p>
+<h3 id="持久化操作-aofrdb">持久化操作 AOF/RDB</h3>
+<p>都有check工具用于修复。</p>
+<p>####AOF： append only file</p>
+<pre tabindex="0"><code>直接追加所有操作，&gt;&gt;
+记录所有的操作并记录在.aof文件中，下次重启redis服务时可读取其中所有内容
+默认每秒进行一次操作
+文件数据量大，可以手动设置最大容量时写到新的文件里
+
+优势：
+每次同步都记录，完整性好
+最多丢失一秒数据
+
+劣势：
+aof数据文件太大，要修复也太慢
+运行效率慢
+</code></pre><p>####RDB： redis database</p>
+<pre tabindex="0"><code>默认模式  
+简单理解为记录当前数据库状态并存储与.rdb文件中，每次重启服务读取数据即可完成
+配置文件中可自定义设置，在 多少时间内 记录了 多少次操作， 即可触发备份
+
+备份过程:
+由原进程fork出一个子进程，将内存写入临时rdb文件，替换快照rdb后退出进程
+退出redis时会默认保存一次
+flushall时也会保存
+优势：
+适合大规模数据恢复
+对数据完整性要求不高
+劣势：
+需要触发间隔时间，如果意外宕机，最后一段数据修改会丢失
+fork进程时，会占用内存空间。
+
+
+同时启用时，优先使用aof，因为完整性更高
+</code></pre><h3 id="发布订阅">发布订阅</h3>
+<p>发布者: publish #channel_name #message  &raquo;</p>
+<p>通道 &raquo;
+订阅者
+subscribe #channel_name</p>
+<p>底层： redis—server维护了一个字典，字典的键就是频道名，值为一个链表，包含所有订阅者</p>
+<p>可用于实时消息系统/实时聊天/订阅关注系统
+复杂场景建议使用kafaka</p>
+<h3 id="主从复制">主从复制</h3>
+<p>主从复制，读写分离<br>
+主机写，从机读取，主&raquo;从单向备份<br>
+主要用于数据冗余/故障恢复/负载均衡/高可用（集群）基石</p>
+<h4 id="手动模式">手动模式</h4>
+<p>基本配置：1 master 2 slaves
+每个服务器默认master,只需配置从节点:</p>
+<pre tabindex="0"><code>    prot
+    pidfile
+    logfile
+    dbfile
+</code></pre><p>查看当前库信息： info replication<br>
+找主机： slaveof #ip port<br>
+连接主机后，全量复制数据<br>
+之后增量复制</p>
+<p>主机宕机手动还原主节点：slaveof no one</p>
+<h4 id="哨兵模式">哨兵模式</h4>
+<p>自动选举master节点模式<br>
+独立进程，通过分别发送命令监测各个服务器状态<br>
+单个哨兵监测到主节点无响应时进入主观下线状态，直至足够多数量的哨兵发现即进入客观下线状态</p>
+<p>sentinel.conf 例：
+sentinel monitor #name 127.0.0.1 6379 1(代表主机宕了，投票给谁成为主机)</p>
+<p>启动： redis-sentinel #path</p>
+<p>原master宕机后，随机选取一个成为新主机<br>
+原主机恢复后，成为新主机的从节点</p>
+<p>优点：
+基于主从复制的优点都拥有<br>
+主从可以切换，故障可以转移，高可用性<br>
+主从模式的升级，自动完成</p>
+<p>缺点：<br>
+不易在线扩容<br>
+实现哨兵模式的配置较为繁琐</p>
+<p><a href="http://www.redis.cn/topics/sentinel.html">http://www.redis.cn/topics/sentinel.html</a></p>
+<h3 id="缓存穿透与雪崩">缓存穿透与雪崩</h3>
+<p>服务的高可用性问题</p>
+<p>用户访问不能在缓存中得到，大量进入数据库IO</p>
+<p>缓存空对象<br>
+过多的空值会造成大量的存储空间浪费<br>
+即使设置过期时间，缓存与数据库窗口不一致，对业务的一致性有影响</p>
+<p>缓存击穿：
+一个热key不停地扛大并发</p>
+<ol>
+<li>设置热点数据永不过期</li>
+<li>加互斥锁<br>
+从缓存到数据库的时候只允许单个访问（即加上锁）</li>
+<li>布隆过滤器
+将所有可能的数据存到一个足够大的bitmap中，一个不存在的数据会bitmap拦截</li>
+<li>缓存空对象
+过多的空值会造成大量的存储空间浪费<br>
+即使设置过期时间，缓存与数据库窗口不一致，对业务的一致性有影响</li>
+</ol>
+<p>缓存雪崩：
+某个时间段内，缓存集中过期，redis宕机<br>
+停掉一些其他服务，保证高可用。<br>
+保高可用：多搭一些集群，异地多活<br>
+限流降级<br>
+数据预热</p>
+<h3 id="内存淘汰机制">内存淘汰机制</h3>
+<p>尽量保证内存中的数据都是数据库的热点数据</p>
+<ol>
+<li>在已经设置过期时间的数据集中淘汰最近最少使用的</li>
+<li>在已经设置过期时间的数据中淘汰即将过期的</li>
+<li>在已经设置过期时间的数据中随机淘汰</li>
+<li>内存不足时，在键空间移除最少使用的（最常用</li>
+<li>从数据集中任意淘汰</li>
+<li>不再写入</li>
+</ol>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+            </div>
+        </div>
+    </main>
+</div><footer class="footer footer--base">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></body>
+
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Chi Feng | GOLANG </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.92.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="差不多得了">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.cf3bc06a9d8faea75a336d59c26f1f005581c5797c997ea627faf957fef00abc.css"
+        integrity="sha256-zzvAap2PrqdaM21Zwm8fAFWBxXl8mX6mJ/r5V/7wCrw="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link rel="canonical" href="/english/post/go/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.98b79432dfa53ecc682fb19247f797a316f8cbca9d5455c8bb22e58fc694b675.js"
+            integrity="sha256-mLeUMt&#43;lPsxoL7GSR/eXoxb4y8qdVFXIuyLlj8aUtnU="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="GOLANG"/>
+<meta name="twitter:description" content="GOLANG 相关 线程调度 GMP模式 M:thread绑定cpu P: processor作为调度器分配goroutine # goamxproces可以预设个数 G: 代表需要处理的进程"/>
+
+
+    
+
+</head>
+<body>
+<header><div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <nav>
+        <ul class="nav__list" id="navMenu">
+            <div class="nav__links">
+                
+                
+                
+            </div>
+            <li>
+                
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>
+<div class="wrapper">
+    <aside><div class="sidebar animated fadeInDown ">
+    <div class="sidebar__content">
+        <div class="logo-title">
+            <div class="title">
+                <img src="/images/avatar.jpg" alt="profile picture">
+                <h3 title=""><a href="/">冯  驰</a></h3>
+                <div class="description">
+                    <p>差不多得了</p>
+                </div>
+            </div>
+        </div>
+        <ul class="social-links">
+            
+        </ul>
+    </div><footer class="footer footer--sidebar">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></div>
+</aside>
+    <main>
+        <div class="autopagerize_page_element">
+            <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>GOLANG</h3>
+                
+            </div>
+
+            <h1 id="golang-相关">GOLANG 相关</h1>
+<h3 id="线程调度">线程调度</h3>
+<p>GMP模式
+M:thread绑定cpu
+P: processor作为调度器分配goroutine # goamxproces可以预设个数
+G: 代表需要处理的进程</p>
+<p>复用线程：
+work steaking
+hand off</p>
+<p>利用并行：
+GOMAXPROCS限定P的个数</p>
+<p>抢占：
+co-routine: 占用cup后，主动释放其他的co-routine才能进行绑定
+go-routine: 最多占用10ms，其他go-routine可以进行抢占</p>
+<p>全局队列：
+work steaking后空闲的P可以从全局队列获取G</p>
+<h3 id="goroutine">goroutine</h3>
+<p>可以用return结束
+子goroutine中，可以用runti.Goexit()结束所有</p>
+<h3 id="channel">channel</h3>
+<p>c := make(chan int， buffer_num)
+c &lt;- i
+data, ok := &lt;- c
+len(c) 当前长度
+cap(c) 容量大小
+有缓存/无缓存
+close(c)</p>
+<p>for data := range c{
+#等待c传送数据
+}</p>
+<p>select{
+case chan1 &lt;- data:
+#c可写即执行
+case &lt;- data:</p>
+<pre><code>default:
+</code></pre>
+<p>}</p>
+<h3 id="变量内置结构">变量内置结构</h3>
+<p>变量包括： type  value -&gt;  pair
+type： static type/ concrete type
+a = asd
+// pair&lt;statictype:string, vlue:&ldquo;asd&rdquo;&gt;
+无论值赋给谁，pair永远不变</p>
+<h3 id="切片与拷贝">切片与拷贝</h3>
+<p>s1 = s[0:2] # 切片，指向同一地址
+copy(s2, s)</p>
+<h3 id="函数值传递">函数值传递</h3>
+<p>以结构体为例：
+可以传参数，形参且只是拷贝，函数内修改无效
+也可以传地址，函数内修改有效</p>
+<pre tabindex="0"><code>type Book srtuct {
+    name string
+    id int
+}
+var book1 book
+book1.name = &quot;golang&quot;
+book1.id = 1
+func change1(book Book){
+    book.name = &quot;python&quot;
+}
+func change2(book &amp;Book){
+    book.name = &quot;c++&quot;
+}
+</code></pre><p>change1(book1)  #修改无效<br>
+change2(*book1) #修改有效</p>
+<h3 id="函数特征">函数特征</h3>
+<h4 id="封装">封装：</h4>
+<p>以包为单位，包内无区别
+首字母为大写则对其他包开放，小写不开放</p>
+<h4 id="继承">继承</h4>
+<p>例：</p>
+<pre tabindex="0"><code>type Human struct{
+    name string
+    gender string
+}
+
+h := Human{&quot;asd&quot;, &quot;male&quot;}
+
+func (this *Human) Eat() {
+    fmt.println(&quot;Human eat...&quot;)
+}
+type Superman struct{
+    Human # 直接写即调用继承
+    level int
+}
+
+s := Superman{Human{&quot;qwe&quot;, &quot;female&quot;}, 123}
+</code></pre><p>//重定义</p>
+<pre tabindex="0"><code>func (this *Superman) Eat() {
+    fmt.println(&quot;Superman eat...&quot;)
+}
+
+//子类新定义
+func (this *Superman) Fly() {
+    fmt.println(&quot;Superman fly...&quot;)
+}
+</code></pre><h4 id="多态">多态</h4>
+<p>interface 本质是一个指针</p>
+<h3 id="gopathgomodule">gopath/gomodule</h3>
+<p>gopath无版本控制概念
+无法同步一致第三方版本号</p>
+<p>gomodule
+go env
+环境变量的设置
+代理下载节点等等</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+            </div>
+        </div>
+    </main>
+</div><footer class="footer footer--base">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></body>
+
+</html>

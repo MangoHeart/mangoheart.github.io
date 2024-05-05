@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Chi Feng | 轨迹跟踪项目 </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.92.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="差不多得了">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.cf3bc06a9d8faea75a336d59c26f1f005581c5797c997ea627faf957fef00abc.css"
+        integrity="sha256-zzvAap2PrqdaM21Zwm8fAFWBxXl8mX6mJ/r5V/7wCrw="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link rel="canonical" href="/english/post/track_maker/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.98b79432dfa53ecc682fb19247f797a316f8cbca9d5455c8bb22e58fc694b675.js"
+            integrity="sha256-mLeUMt&#43;lPsxoL7GSR/eXoxb4y8qdVFXIuyLlj8aUtnU="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="轨迹跟踪项目"/>
+<meta name="twitter:description" content="关于动态目标的轨迹展示 二维平面轨迹展示 项目流程：
+ 一个较大空间内，布置4-6个不同角度的摄像头，分别获取画面 加入云从算法，捕捉动态物体并实现物体聚类（甚至人脸识别) &ndash;该部分由云从提供算法完成 通过视频融合算法，将不同的画面融合成一个图像 利用标定物建立坐标转换体系，通过透视变换将坐标映射至融合后画面 通过对坐标点的过滤与整合，将轨迹按一定需求展现在全景平面图上。  本人参与项目最后一步，得到坐标数据后的过滤整合，并通过算法将大量散点平滑成曲线展示。"/>
+
+
+    
+
+</head>
+<body>
+<header><div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <nav>
+        <ul class="nav__list" id="navMenu">
+            <div class="nav__links">
+                
+                
+                
+            </div>
+            <li>
+                
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>
+<div class="wrapper">
+    <aside><div class="sidebar animated fadeInDown ">
+    <div class="sidebar__content">
+        <div class="logo-title">
+            <div class="title">
+                <img src="/images/avatar.jpg" alt="profile picture">
+                <h3 title=""><a href="/">冯  驰</a></h3>
+                <div class="description">
+                    <p>差不多得了</p>
+                </div>
+            </div>
+        </div>
+        <ul class="social-links">
+            
+        </ul>
+    </div><footer class="footer footer--sidebar">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></div>
+</aside>
+    <main>
+        <div class="autopagerize_page_element">
+            <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>轨迹跟踪项目</h3>
+                
+            </div>
+
+            <h1 id="关于动态目标的轨迹展示">关于动态目标的轨迹展示</h1>
+<h2 id="二维平面轨迹展示">二维平面轨迹展示</h2>
+<p>项目流程：</p>
+<ol>
+<li>一个较大空间内，布置4-6个不同角度的摄像头，分别获取画面</li>
+<li>加入云从算法，捕捉动态物体并实现物体聚类（甚至人脸识别) &ndash;该部分由云从提供算法完成</li>
+<li>通过视频融合算法，将不同的画面融合成一个图像</li>
+<li>利用标定物建立坐标转换体系，通过透视变换将坐标映射至融合后画面</li>
+<li>通过对坐标点的过滤与整合，将轨迹按一定需求展现在全景平面图上。</li>
+</ol>
+<p>本人参与项目最后一步，得到坐标数据后的过滤整合，并通过算法将大量散点平滑成曲线展示。</p>
+<h3 id="一期项目-二维平面实现">一期项目： 二维平面实现</h3>
+<ol>
+<li>后台程序中，留存轨迹图片。效果如下
+<img src="/images/track/2d_track.jpg" alt="test"></li>
+</ol>
+<p>计算过程中过滤后的原始散点图如下：
+<img src="/images/track/origin_allcamera_scatter.jpg" alt="test"></p>
+<ol start="2">
+<li>构建简答后台管理系统用于交付
+明确需求: 简易展示，功能展现为主。<br>
+初阶段展示如下图：左侧为实时视频流，右侧初定为检索后展现的轨迹。<br>
+<img src="/images/track/live_stream.png" alt="test"></li>
+</ol>
+<p>实时视频下方默认放置平面底图，下方下拉栏选择日期、时间查询该时间段内捕捉的人物编号，选择编号后点击刷新底图。
+<img src="/images/track/querying.png" alt="test"></p>
+<p>刷新后的轨迹图
+<img src="/images/track/2d_result.png" alt="test"></p>
+<p>轨迹图下方可以显示该时间段内的录像视频
+<img src="/images/track/2d_video.png" alt="test"></p>
+<p>追加实时查询，点击查询距当前时间指定时间段饿轨迹，或者实时显示捕捉的轨迹点
+<img src="/images/track/last_track.png" alt="test"></p>
+<h2 id="3d建模中的轨迹展示">3d建模中的轨迹展示</h2>
+<p>以平面轨迹为基础，将实地场景制作成3d模型，并在模型中展现更为直观的轨迹。<br>
+3d模型由cesium技术生成，制作成b3dm格式文件在前段加载显示。<br>
+启动端口服务后，进入首页加载默认文件夹的所有数据，如下图。<br>
+<img src="/images/track/data_list.png" alt="test"></p>
+<p>点击查看动态轨迹展现,同时可以在右下角显示当时视频(如果存在)<br>
+<img src="/images/track/3d_display.png" alt="test"></p>
+<p>点击查看数据散点分布<br>
+<img src="/images/track/3d_points.png" alt="test"></p>
+<p>点击下拉框可选择视角进行切换<br>
+<img src="/images/track/3d_diffview.png" alt="test"></p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+            </div>
+        </div>
+    </main>
+</div><footer class="footer footer--base">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></body>
+
+</html>

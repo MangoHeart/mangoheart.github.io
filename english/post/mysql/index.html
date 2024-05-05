@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Chi Feng | mysql </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.92.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="mysql知识点">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.cf3bc06a9d8faea75a336d59c26f1f005581c5797c997ea627faf957fef00abc.css"
+        integrity="sha256-zzvAap2PrqdaM21Zwm8fAFWBxXl8mX6mJ/r5V/7wCrw="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link rel="canonical" href="/english/post/mysql/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.98b79432dfa53ecc682fb19247f797a316f8cbca9d5455c8bb22e58fc694b675.js"
+            integrity="sha256-mLeUMt&#43;lPsxoL7GSR/eXoxb4y8qdVFXIuyLlj8aUtnU="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="mysql"/>
+<meta name="twitter:description" content="mysql知识点"/>
+
+
+    
+
+</head>
+<body>
+<header><div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <nav>
+        <ul class="nav__list" id="navMenu">
+            <div class="nav__links">
+                
+                
+                
+            </div>
+            <li>
+                
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>
+<div class="wrapper">
+    <aside><div class="sidebar animated fadeInDown ">
+    <div class="sidebar__content">
+        <div class="logo-title">
+            <div class="title">
+                <img src="/images/avatar.jpg" alt="profile picture">
+                <h3 title=""><a href="/">冯  驰</a></h3>
+                <div class="description">
+                    <p>差不多得了</p>
+                </div>
+            </div>
+        </div>
+        <ul class="social-links">
+            
+        </ul>
+    </div><footer class="footer footer--sidebar">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></div>
+</aside>
+    <main>
+        <div class="autopagerize_page_element">
+            <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>mysql</h3>
+                
+            </div>
+
+            <h1 id="mysql-梳理">mysql 梳理</h1>
+<h3 id="b树和b树">b树和b+树</h3>
+<p>b树叶子节点不存储数据，通过多叉树指向底层数据，叶子节点之间不存在链表
+b+树枝节点存储数据，底层叶子节点按序排列，且存在双向链表，利于范围查找。</p>
+<h3 id="聚簇索引-与-非聚簇索引">聚簇索引 与 非聚簇索引</h3>
+<p>聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb）<br>
+有隐藏列<br>
+trx_id: 用来存储每次对某条聚簇索引记录进行修改时候的事务id<br>
+roll_point: 每次修改时，老版本写入undo日志，该指针指向当前状态的上一个版本获得信息</p>
+<p>非聚簇索引将地址与数据分开，由地址指向数据，需要多一次IO。（Myisam)</p>
+<h3 id="索引的本质">索引的本质</h3>
+<p>排好序的数据结构，用于快速查找。</p>
+<h3 id="sql优化">sql优化</h3>
+<p>查询分析： explain, show profile
+explain字段：</p>
+<pre tabindex="0"><code>id： 按值从大到小执行
+select type： simple primary subquery derived union union_result
+type： system（单行记录表）&gt; const &gt; eq_ref（唯一性索引扫描） &gt; ref（非唯一索引扫描） 
+        &gt; range &gt; index（索引中读取） &gt; ALL(全表/硬盘)
+extra:
+    good: using index
+    bad: using filesort
+         using temporary
+</code></pre><h3 id="左连接和右链接">左连接和右链接</h3>
+<p>左连接返回左表所有和右表对应数据<br>
+右连接返回右表和左表对应的数据</p>
+<h3 id="锁的分类">锁的分类</h3>
+<p>按范围：表锁（myisam）、行锁（innodb）、间隙锁</p>
+<p>按操作方式：读锁、写锁</p>
+<p>按性质：共享锁（读）、排他锁（写）
+或 乐观锁、悲观锁</p>
+<h3 id="常用引擎-myisam-innodb">常用引擎： Myisam/ Innodb</h3>
+<p>Myisam:
+表锁
+不支持事务
+非聚簇索引</p>
+<p>Innodb:
+行锁
+支持事务
+聚簇索引</p>
+<h3 id="事务本质">事务本质</h3>
+<p>事务，即一组操作的集合。</p>
+<h3 id="事务实现">事务实现</h3>
+<ol>
+<li>找到数据，将该页缓存到buffer pool中</li>
+<li>执行update，修改buffer pool也就是内存中的数据</li>
+<li>针对updae生成redolog对象，存入logbuffer</li>
+<li>针对update生成undolog日志，用于回滚</li>
+<li>如果事务提交，将redolog持久化，后续机制将buffer pool中修改的数据持久化到磁盘</li>
+<li>如果回滚，利用undolog回滚</li>
+</ol>
+<h4 id="性质acid">性质：ACID</h4>
+<p>A：atomic 原子性
+所有操作成功，或者所有操作失败。</p>
+<p>C：consistency 一致性
+数据库总是从一个状态，转移到另一个状态。
+其他所有属性为一致性提供保障</p>
+<p>I：isolation 独立性
+各个事务提交之前，其他事务不可见。</p>
+<p>D： duration 持久性
+内存操作需要持久化到本地磁盘，一旦更改即永久生效。</p>
+<h4 id="事务的隔离级别">事务的隔离级别：</h4>
+<ol>
+<li>
+<p>read uncommit 读未提交  可能会出现脏读<br>
+同一个事务中读取同一个值可能会不同<br>
+例：<br>
+A  读x=200 &mdash;&mdash;&mdash;读x=300  COMMIT  此处 两个x对应不上<br>
+B  &mdash;&mdash;&mdash;&mdash;写x=300 commit</p>
+</li>
+<li>
+<p>read commit 读已提交 不可重复读
+利用MVCC实现<br>
+rc中，每次select重新活动区一个独立的readview
+rd中第一次生成之后，所有的读操作都复用初次获取的readview</p>
+</li>
+<li>
+<p>repeatable read 可重复读 可能会幻读 mysql默认级别<br>
+事务内的读取保持一致性,可能会在范围读取时获得不一致的数据量<br>
+例：<br>
+事务A： count id in range(1,100) = 10&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;- count again = 11<br>
+事务B：  &mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;&ndash;insert id = 10 commit</p>
+</li>
+<li>
+<p>seriesable 序列化</p>
+</li>
+</ol>
+<h3 id="一致性">一致性</h3>
+<p>事务记录redolog</p>
+<h3 id="mvcc-multiple-version-concurrent-control-多版本并发控制">MVCC multiple version concurrent control 多版本并发控制</h3>
+<p>通过类似快照的方式保存数据状态。
+开始事务时，创建readview快照，获得当前活动事务的id，即未提交事务的id
+访问数据时，获得数据中的事务cur_id即事务最大值，对比readview
+如果cur_id &lt; readview,即说明在创建readview时，之前的所有事务都已提交，都可以访问
+如果cur_id &gt; readview，说明在当前readview之后又新的操作，需要根据roll_point指向的之前版本找到可用的数据</p>
+<h3 id="删除与清空">删除与清空</h3>
+<p>delete：
+删除数据，可以使用where。
+简单理解为将选中的数据设置为不显示
+例： 原数据自动主键1 2 3 4 5， delete 5， 插入新，编号为6</p>
+<p>truncate：
+保留表结构，清空所有表数据。
+例， 原数据自动主键1 2 3 4 5， truncate之后新增主键从1 开始</p>
+<p>drop：
+删除表，包括结构与数据。</p>
+</div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+            </div>
+        </div>
+    </main>
+</div><footer class="footer footer--base">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></body>
+
+</html>

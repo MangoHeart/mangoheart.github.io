@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html  dir="ltr" lang="en" data-theme=""><head>
+    <title> Chi Feng | MGMP </title>
+
+    
+    <meta charset="utf-8"><meta name="generator" content="Hugo 0.92.1" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+    <meta name="description" content="差不多得了">
+    
+    
+    
+    <link rel="stylesheet"
+        href="/css/main.min.cf3bc06a9d8faea75a336d59c26f1f005581c5797c997ea627faf957fef00abc.css"
+        integrity="sha256-zzvAap2PrqdaM21Zwm8fAFWBxXl8mX6mJ/r5V/7wCrw="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    
+    <link rel="stylesheet"
+        href="/css/markupHighlight.min.f798cbda9aaa38f89eb38be6414bd082cfd71a6780375cbf67b6d2fb2b96491e.css"
+        integrity="sha256-95jL2pqqOPies4vmQUvQgs/XGmeAN1y/Z7bS&#43;yuWSR4="
+        crossorigin="anonymous"
+        type="text/css">
+    
+    <link rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" 
+    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" 
+    crossorigin="anonymous" />
+    
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+
+    <link rel="canonical" href="/english/post/mgmp/">
+
+    
+    
+    
+    
+    <script type="text/javascript"
+            src="/js/anatole-header.min.98b79432dfa53ecc682fb19247f797a316f8cbca9d5455c8bb22e58fc694b675.js"
+            integrity="sha256-mLeUMt&#43;lPsxoL7GSR/eXoxb4y8qdVFXIuyLlj8aUtnU="
+            crossorigin="anonymous"></script>
+
+
+    
+        
+        
+        <script type="text/javascript"
+                src="/js/anatole-theme-switcher.min.7fd87181cdd7e8413aa64b6867bb32f3a8dc242e684fc7d5bbb9f600dbc2b6eb.js"
+                integrity="sha256-f9hxgc3X6EE6pktoZ7sy86jcJC5oT8fVu7n2ANvCtus="
+                crossorigin="anonymous"></script>
+    
+    <meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="MGMP"/>
+<meta name="twitter:description" content="MGMP(Multiple goals motion planning) 之前写论文就够瑞的了，这次就多说简单的人话吧。
+给定前提，一个环境中包括确定的站点和路径，机器人需要完成一次路径，在完成所有规定任务的情况下，规划最优路劲。
+最终环境情况如下：
+ 访问站点包括普通的站点与充能站点。 所有站点有开放时窗口。 所有的能量消耗与站点之间的移动消耗均已等价为时间消耗，在环境中提供。 最终选定蒙特卡洛树算法后，调节迭代次数实现该计算程度下的最优解。  对于这个问题的简化，参考来源于约克大学编写的关于OX棋的想法。"/>
+
+
+    
+
+</head>
+<body>
+<header><div class="page-top animated fadeInDown">
+    <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+    </a>
+    <nav>
+        <ul class="nav__list" id="navMenu">
+            <div class="nav__links">
+                
+                
+                
+            </div>
+            <li>
+                
+                <a class="theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a>
+                
+            </li>
+        </ul>
+    </nav>
+</div>
+</header>
+<div class="wrapper">
+    <aside><div class="sidebar animated fadeInDown ">
+    <div class="sidebar__content">
+        <div class="logo-title">
+            <div class="title">
+                <img src="/images/avatar.jpg" alt="profile picture">
+                <h3 title=""><a href="/">冯  驰</a></h3>
+                <div class="description">
+                    <p>差不多得了</p>
+                </div>
+            </div>
+        </div>
+        <ul class="social-links">
+            
+        </ul>
+    </div><footer class="footer footer--sidebar">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></div>
+</aside>
+    <main>
+        <div class="autopagerize_page_element">
+            <div class="content">
+    <div class="post  animated fadeInDown ">
+        <div class="post-content">
+            
+            <div class="post-title">
+                <h3>MGMP</h3>
+                
+            </div>
+
+            <h1 id="mgmpmultiple-goals-motion-planning">MGMP(Multiple goals motion planning)</h1>
+<p>之前写论文就够瑞的了，这次就多说简单的人话吧。</p>
+<p>给定前提，一个环境中包括确定的站点和路径，机器人需要完成一次路径，在完成所有规定任务的情况下，规划最优路劲。</p>
+<p>最终环境情况如下：</p>
+<ol>
+<li>访问站点包括普通的站点与充能站点。</li>
+<li>所有站点有开放时窗口。</li>
+<li>所有的能量消耗与站点之间的移动消耗均已等价为时间消耗，在环境中提供。</li>
+<li>最终选定蒙特卡洛树算法后，调节迭代次数实现该计算程度下的最优解。</li>
+</ol>
+<p>对于这个问题的简化，参考来源于约克大学编写的关于OX棋的想法。<br>
+OX棋给定条件，两个棋手在3*3的九宫格中分别用O和X下期，先手达到三子连城线时即获胜，否则平局。<br>
+MTSC搜索思想即，当我的回合时，我的下一步棋作为根节点，子节点为对手能下的所有节点，每个子节点又是我的下一个回合可以下棋的选择。<br>
+由于这个游戏是必然结束的，且可以明确评价当前走法，即胜/负/平。<br>
+所以在先手的选手视角，所有可能即为9！约30w+种可能。<br>
+最终测试出来的时候差不多设置在10W次迭代的时候，且对手迭代此时低一个量级时总可以获胜。</p>
+<p>同理，当年轰动一时的alpha go以及之后的alpha zero都是基于这个基础算法。<br>
+那肯定有人要问了，你这9个格子阶乘完也就32w，算算也就没多久的事，你这围棋19*19，接近400！你算到下个世纪也算不完啊。<br>
+所以说，这个搜索树的结构，深度就是两边到底走了多少步，宽度就是搜索了多少种不同的走法。<br>
+要穷尽者这种树，要么就是预测的步数少几步，就算是400的几次方，在算力之内就能算出来。<br>
+要么就是每次多走几步，然后走多走集中不同的走法。<br>
+所以关键问题又回到了最重要的一个条件，每一个支线的最后，必须要有一个暂时或者最终的状态能被评估，用于后续的比较与筛选。<br>
+就最简单的一个例子，对面先手在左上角布局，你突然下了个最右下角的子，连着七八回合都在那叠buff。按规则来说肯定是可以的啊，<br>
+但问题是下在这里对最终获得胜局的目的完全没有任何帮助，所以在这种树的节点评估时，将会给出一个非常低的评价，以后再搜的时候就可以<br>
+避免这种走法。那其实这样一想，能走的路子也就没有400！这么夸张了，而且随着学习样本的越来越多，后期评价体系将会越来完善。<br>
+在最终的时候，alpha go与alpha zero已经能在围棋这个游戏中完全战胜人类。</p>
+<p>所以还是利用这种思想用在这个MGMP的项目里，所有的站点都是明确的，所有消耗级被转换成时间。<br>
+最终的评价体系就是在完成任务的条件下，筛选出耗时最少的路线。
+这个是自己基本自己照着开源代码的思路写的，源码在下面，别的也懒得写了，看看能不能之后把论文原文挂出来，反正思路大概就是这么个思路。</p>
+<p>\\python</p>
+<h1 id="this-is-the-algorithm-part-for-the-multiple-goal-motion-planning">This is the algorithm part for the Multiple Goal Motion Planning</h1>
+<h1 id="082019-0256---chi-feng">08/2019 02.56   Chi Feng</h1>
+<pre tabindex="0"><code>from math import *
+import random
+
+class MapState:
+    
+    
+    def __init__(self):
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    
+    def Clone(self):
+    
+        st = MapState()
+        return st
+    
+    
+    def DoMove(self, move):
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    def GetMoves(self):
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+
+    def GetResult(self):
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    def CheckMove (self, move):    
+        
+        
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    def CheckTimer(self):
+    
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    
+    
+    def CheckPath(self):
+    
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    
+    
+    def CheckOrder(self):
+    
+    
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    
+    
+    def CheckWatingTime(self):
+    
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    def CheckNextPosition(self):
+    
+        &quot;&quot;&quot;
+        &quot;&quot;&quot;
+    
+    def __repr__(self):
+    
+    
+        pass
+
+class MGMPState():  #multiple goals motion planning State
+
+    
+    def __init__(self):
+        #self.visitTable = [1,0,0,0,0]
+        self.visitTable = [1,0,0,0,0]
+        self.order = [0]
+        self.power = 10000
+        self.frontVisit = [0,0,0,0,1]
+        #self.distance = [[0,1,2,3,4],[1,0,1,2,3],[2,1,0,1,2],[3,2,1,0,1],[4,3,2,1,0]]
+        #self.distance = [[0,1,10,100,1000],[1,0,50,300,2000],[10,50,0,500,3000],[100,300,500,0,5000],[1000,2000,3000,5000,0]]
+        
+        
+        #self.distance = [[0,1,10,100,1000],[1,0,1,300,2000],[10,50,0,1,3000],[100,300,500,0,1],[1000,2000,3000,5000,0]]
+        
+        
+        #self.distance = [[0,1,10,100,1000],[1,0,1,300,2000],[10,50,0,1,3000],[1000,3000,5000,0,1],[1000,2000,3000,5000,0]]
+        
+        
+        #this is for shortest path
+        self.distance = [[0,5,6,3,1],[5,0,6,3,2],[6,6,0,6,3],[3,3,6,0,7],[1,2,3,7,0]]
+        
+        
+        #this is for fron visit test
+        #self.distance = [[0,3000,2,3,1],[3000,0,1,2000,1000],[2,2000,0,3,4],[3,1000,3,0,1],[1,2,4,1,0]]
+        
+        self.openTime = [[0,100000],[0,100000],[0,100000],[0,10000],[0,10000]]
+        self.chargeDistance = [10,10,10,10,10]
+        self.timer = 0
+        self.waitingTime = []
+        self.current_distance = 0
+    def Clone(self):
+        
+        st = MGMPState()
+        st.order = self.order[:]
+        st.visitTable = self.visitTable[:]
+        st.current_distance = self.current_distance
+        st.timer = self.timer
+        st.waitingTime = self.waitingTime[:]
+        st.power = self.power
+        return st
+        
+    def DoMove(self, move):   #选出的节点进行评估计算
+    
+        &quot;&quot;&quot;
+        如果传进来的是-2，
+            先去加油站，并更新所有状态
+        如果传进来的是正整数
+            三种情况判断 
+                1. self.timer + 移动的时间 刚好落在开放时间内
+                    那么直接移动，并更新所有状态
+                2. self.timer + 移动的时间 &lt; 开放时间[m][0]
+                    先判断在上一个站点等待的时间 = self.openTime[m][o] - (self.timer + 移动的时间)
+                    之后开始一定， 并更新所有状态
+                3. self.timer + 移动的时间 &gt; 开放时间[m][1]
+                    self.visitTable[m] = -1 表示错过访问机会
+        &quot;&quot;&quot;
+        if self.visitTable[move] == -2:
+            #前往加油站
+            
+            #计算等待时间
+            self.waitingTime.append(0)
+            
+            #更新timer
+            self.timer = self.timer + self.chargeDistance[self.order[len(self.order)-1]]
+            
+            #更新访问表,不用跟新，如果可以的话添加访问加油站的次数
+            #self.visitTable[move] = 1
+            
+            #更新访问路径
+            self.current_distance = self.current_distance + self.chargeDistance[self.order[len(self.order)-1]]
+            
+            #更新访问序列
+            self.order.append(-1)
+            
+            #更新能量状况
+            self.power = self.power + 5000
+            #print(&quot;after charrged&quot;, self.power)
+            self.visitTable[move] = 0
+            
+        else:
+        
+            #从加油站出来的
+            if self.order[len(self.order)-1] == -1 :
+                
+                #以下属于 情况 2  需要等待
+                if self.timer + self.chargeDistance[move] &lt; self.openTime[move][0] :
+                    
+                    
+                    
+                    #计算等待时间
+                    self.waitingTime.append(self.openTime[move][0] - self.timer - self.chargeDistance[move])
+            
+                    #更新timer
+                    self.timer = self.openTime[move][0]
+            
+                    #更新访问表
+                    self.visitTable[move] = 1
+            
+                    #更新访问路径
+                    self.current_distance = self.current_distance + self.chargeDistance[move]
+            
+                    #更新访问序列
+                    self.order.append(move)
+            
+                    #更新能量状况
+                    self.power = self.power - self.chargeDistance[move]
+            
+            
+                    #print(&quot;this is waitingTime&quot;, self.waitingTime, &quot;\n&quot;)
+                    #print(self.timer)
+        
+                #以下属于情况 3 错过访问
+                elif self.timer + self.chargeDistance[move] &gt; self.openTime[move][1] :
+                    self.visitTable[move] = -1
+                    #print(self.visitTable)
+                    #print(&quot;timeout&quot;)
+                    #exit()
+            
+        
+                #以下属于情况 1 正常访问
+                else :
+                    #计算等待时间
+                    self.waitingTime.append(0)
+            
+                    #更新timer
+                    self.timer = self.timer + self.chargeDistance[move]
+                
+                    #更新访问表
+                    self.visitTable[move] = 1
+            
+                    #更新访问路径
+                    self.current_distance = self.current_distance + self.chargeDistance[move]
+            
+                    #更新访问序列
+                    self.order.append(move)
+        
+        
+                    #更新能量状况
+                    self.power = self.power - self.chargeDistance[move]
+        
+            
+            
+            
+            
+            
+            
+            #从一般站点出发的
+            else:
+                #以下属于 情况 2  需要等待
+                if self.timer + self.distance[self.order[len(self.order)-1]][move] &lt; self.openTime[move][0] :
+                    
+                    
+                    #计算等待时间
+                    self.waitingTime.append(self.openTime[move][0] - self.timer - self.distance[self.order[len(self.order)-1]][move])
+            
+                    #更新timer
+                    self.timer = self.openTime[move][0]
+            
+                    #更新访问表
+                    self.visitTable[move] = 1
+            
+                    #更新访问路径
+                    self.current_distance = self.current_distance + self.distance[self.order[len(self.order)-1]][move]
+            
+                    #更新访问序列
+                    self.order.append(move)
+            
+                    #更新能量状况
+                    self.power = self.power - self.distance[self.order[len(self.order)-1]][move]
+            
+            
+                    #print(&quot;this is waitingTime&quot;, self.waitingTime, &quot;\n&quot;)
+                    #print(self.timer)
+        
+                #以下属于情况 3 错过访问
+                elif self.timer + self.distance[self.order[len(self.order)-1]][move] &gt; self.openTime[move][1] :
+                    self.visitTable[move] = -1
+                    #print(self.visitTable)
+                    #print(&quot;timeout&quot;)
+                    #exit()
+            
+        
+                #以下属于情况 1 正常访问
+                else :
+                    #计算等待时间
+                    self.waitingTime.append(0)
+            
+                    #更新timer
+                    self.timer = self.timer + self.distance[self.order[len(self.order)-1]][move]
+                
+                    #更新访问表
+                    self.visitTable[move] = 1
+            
+                    #更新访问路径
+                    self.current_distance = self.current_distance + self.distance[self.order[len(self.order)-1]][move]
+            
+                    #更新访问序列
+                    self.order.append(move)
+        
+        
+                    #更新能量状况
+                    self.power = self.power - self.distance[self.order[len(self.order)-1]][move]
+                    #print(&quot;this is power&quot;,self.power)
+                    #exit()
+        
+        #print(self.timer)
+        &quot;&quot;&quot;
+            暂时的关于时间的约束
+        &quot;&quot;&quot;
+        
+        
+        
+        #print(&quot;current all distance is &quot; + str(self.current_distance) + &quot;\n&quot;)
+        #print(&quot;before is &quot; + str(self.current_position)+ &quot;\n&quot;)
+        
+        #self.current_position = move
+        
+        #print(&quot;after is &quot; + str(self.current_position) + &quot;\n&quot;)
+        #print (self.current_position)
+        #print(self.visitTable)
+        
+        
+        
+        
+    def GetMoves(self):    #选取出所有能继续访问的节点
+        
+        
+        
+        justChared = self.order[len(self.order)-1]#取上一个访问的站点号
+
+        for j in range (5):
+            if self.visitTable[j] == 0 or self.visitTable[j] == -2:
+                #需要考虑从加油站出发
+                if justChared == -1:
+                    #当前时间已经超过该站点的开放时间，再也没有办法访问
+                    if self.timer &gt;= self.openTime[j][1]:
+                        self.visitTable[j] = -1
+                
+                    #如果从上一个节点到这个节点的耗时 + sele.timer &gt; 关闭时间，说明达到后站点已经关闭 所以不能访问
+                    if self.timer + self.chargeDistance[j] &gt; self.openTime[j][1]:
+                        self.visitTable[j] = -1
+                
+                
+                
+                
+                #从一般站点出发的
+                else: 
+                    #达到下一站点时的能量不够去加油站
+                    if (self.power - self.distance[self.order[len(self.order)-1]][j] &lt; self.chargeDistance[j]):
+                        #返回过早
+                        self.visitTable[j] = -2
+                    
+            
+            
+                    #当前时间已经超过该站点的开放时间，再也没有办法访问
+                    if self.timer &gt;= self.openTime[j][1]:
+                        self.visitTable[j] = -1
+                    
+                    
+                    #如果从上一个节点到这个节点的耗时 + sele.timer &gt; 关闭时间，说明达到后站点已经关闭 所以不能访问
+                    if self.timer + self.distance[self.order[len(self.order)-1]][j] &gt; self.openTime[j][1]:
+                        self.visitTable[j] = -1
+        
+        
+        &quot;&quot;&quot;选出能继续的节点后，计算达到下一个节点后能量是否能抵达加油站，
+            如果可以，则返回数组（所有抵达的站点），如果不能，返回-1，表示先去加油站
+        
+        
+        
+            可以先加入前置条件，访问下一个节点前所需要访问的其他节点
+        &quot;&quot;&quot;
+        possibleMove = []
+        for i in range(5):
+            if self.visitTable[i] == 0 or self.visitTable[i] == -2:
+                if(self.visitTable[self.frontVisit[i]]) == 1:
+                    possibleMove.append(i)
+                    #print(possibleMove)
+                    
+        return possibleMove
+        #return [i for i in range(5) if self.visitTable[i] == 0 and self.timer &gt;= self.openTime[i][0] and self.timer &lt;= self.openTime[i][1]]
+        
+    def CheckFornt(self, move):
+        if self.visitTable[self.frontVisit[move]] == 1:
+            return 1
+        else : 
+            return 0
+    
+    
+    
+    #检查是否是时间内的站点
+    def CheckMove (self, move):
+        
+        
+        return self.visitTable[move]
+
+
+
+    #检查是否当前的时间
+    def CheckTimer(self):
+    
+        return self.timer
+    
+    #检查当前的路劲总长
+    def CheckPath(self):
+        
+        return self.current_distance
+    
+    
+    def CheckOrder(self):
+        
+        return self.order
+        
+        
+    def CheckWatingTime(self):
+    
+        return self.waitingTime
+    
+    def CheckNextPosition(self):
+        
+        return self.order[len(self.order)-1]
+    
+    
+    def GetResult(self):   #对当前的情况进行评估
+        
+      
+        return -self.current_distance
+        
+        if self.GetMoves() == []: 
+            return 0.5
+        assert False
+        
+    def __repr__(self):
+        s=&quot;&quot;
+        for i in range(5):
+            #s += &quot;.XO&quot;[self.board[i]]
+            s += &quot;.XO&quot;[self.visitTable[i]]
+            if i %6 == 4: s+= &quot;\n&quot;
+        return s
+        
+        
+class Node:
+    
+        
+    def __init__(self, move = None, parent = None, state = None):
+        self.move = move  #next position
+        self.parentNode = parent  #this nodes's parent node
+        self.childNodes = []   # set of children nodes
+        self.wins = 0   #comparation value
+        self.visits = 0     #time visited
+        self.current_distance = 0
+        self.untriedMoves = state.GetMoves()    #rest of unvisited nodes
+        #self.playerJustMoved = state.playerJustMoved
+        
+    def UCTSelectChild(self):
+        #s = sorted(self.childNodes, key = lambda c : c.wins/c.visits + sqrt(2*log(self.visits)/c.visits))[-1] #c.wins/c.visits可能需要变成路径耗时
+        #s = sorted(self.childNodes, key = lambda c : c.wins + sqrt(2*log(self.visits)/c.visits))[-1] 
+        s = sorted(self.childNodes, key = lambda c : c.wins + 2*sqrt(log(self.visits)/c.visits))[-1] 
+        return s
+        
+    def AddChild(self, m, s):
+        n = Node(move = m, parent = self, state =s) #创建新节点
+        self.untriedMoves.remove(m)     #移除不存在的将要移动到的节点
+        self.childNodes.append(n)       #将新建的子节点附加至当前的节点成为子节点
+        
+        return n
+        
+    def Update(self, result):
+        self.visits += 1    #当前被访问的次数
+        #print(self.visits)
+        self.wins += result     #should be 当前已访问路径的总长度
+        #print(self.wins)
+        
+        
+        
+    def __repr__(self):
+        return &quot;[M:&quot; + str(self.move) + &quot;W/V&quot; + str(self.wins) + &quot;/&quot; + str(self.visits) + &quot;U:&quot; + str(self.untriedMoves) + &quot;]&quot;
+    
+    
+    def TreeToString(self, indent):
+        s= self.IndentString(indent) + str(self)
+        for c in self.childNodes:
+            s += c.TreeToString(indent + 1)
+        return s
+    
+    def IndentString(self, indent):
+        s = &quot;\n&quot;
+        for i in range (1, indent+1):
+            s += &quot;|&quot;
+        return s
+    
+    def ChildrenToString(self):
+        s = &quot;&quot;
+        for c in self.childNodes:
+            s += str(c) + &quot;\n&quot;
+        return s
+        
+        
+        
+def UCT(rootstate, itermax, verbose = False):
+    
+    rootnode = Node(state = rootstate)
+    
+    for i in range(itermax):
+        node = rootnode
+        state = rootstate.Clone()
+        
+        #Select
+        while node.untriedMoves == [] and node.childNodes != []:
+            node = node.UCTSelectChild()
+            state.DoMove(node.move)
+            
+            
+        #Expand
+        if node.untriedMoves != []:
+            m = random.choice(node.untriedMoves)
+            
+            if state.CheckFornt(m) == 1:
+            
+                state.DoMove(m)
+                node = node.AddChild(m,state)
+            
+            
+        # Rollout 
+        while state.GetMoves() !=[]:
+            
+            state.DoMove(random.choice(state.GetMoves()))
+            
+        # Backpropagate
+        while node != None:
+            node.Update(state.GetResult())
+            node = node.parentNode
+    
+    return sorted(rootnode.childNodes, key = lambda c:c.visits)[-1].move
+    #return sorted(rootnode.childNodes, key = lambda c:c.wins)[-1].move
+    
+    
+    
+
+def UCTFindPath():
+    state = MGMPState()
+    print (&quot;At beginning:&quot; + str(state) + &quot;\n&quot;)
+    while (state.GetMoves() != []):
+        m = UCT(rootstate = state, itermax = 10000, verbose = False)
+        print(&quot;this is next waypotin number &quot;,m)
+        
+        state.DoMove(m)
+        
+        #timer = state.CheckTimer()
+        #print(&quot;this is timer&quot;,timer)
+        nextP = state.CheckNextPosition()
+        print(&quot;this is nextPosition number&quot;,nextP)
+        
+        
+        #print(&quot;after&quot; + str(state) + &quot;\n&quot;)
+        
+       
+    order = state.CheckOrder()
+    print(&quot;this is order sequence&quot;,order)
+    waitingTable = state.CheckWatingTime()
+    print(&quot;this is waiting time after visited station&quot;, waitingTable)
+        
+if __name__ == &quot;__main__&quot;:
+    &quot;&quot;&quot;
+    &quot;&quot;&quot;
+    UCTFindPath()
+\\\
+</code></pre></div>
+        <div class="post-footer">
+            <div class="info">
+                
+                
+            </div>
+        </div>
+
+        
+    </div>
+
+
+            </div>
+        </div>
+    </main>
+</div><footer class="footer footer--base">        
+    <div class="by_farbox">
+        <ul class="footer__list">
+            <li class="footer__item">&copy;
+                
+                    Chi Feng 2024
+                
+            </li>
+            
+        </ul>
+    </div>
+</footer>
+
+<script type="text/javascript"
+        src="/js/medium-zoom.min.83cb1dd5fea8d42d87d1e601a07faa73089ad0ef9ccfe5daf6041289ebcc4e46.js"
+        integrity="sha256-g8sd1f6o1C2H0eYBoH&#43;qcwia0O&#43;cz&#43;Xa9gQSievMTkY="
+        crossorigin="anonymous"></script></body>
+
+</html>

@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>冯驰的个人主页</title>
+    <link>https://mangoheart.github.io/</link>
+    <description>Recent content on 冯驰的个人主页</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 04 May 2024 17:45:55 +0800</lastBuildDate><atom:link href="https://mangoheart.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>个人简历</title>
+      <link>https://mangoheart.github.io/english/post/main_info/</link>
+      <pubDate>Sat, 04 May 2024 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/main_info/</guid>
+      
+        <description>个人信息 姓名： 冯驰
+性别： 男
+年龄： 28 (1995/07)
+籍贯： 浙江</description>
+      
+    </item>
+    
+    <item>
+      <title>华为车BU项目经历</title>
+      <link>https://mangoheart.github.io/english/post/icsp/</link>
+      <pubDate>Sat, 04 May 2024 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/icsp/</guid>
+      
+        <description>#智能座舱项目经历 这一部分在各个意义上都不能说的太深入，华子的手段大家懂的都懂，哥们真顶不住251。
+所以以下这些东西，都一定能在各个华为、各个车企、各种新闻以及展厅的实车上看出来基本是完全公开的内容。
+我就只讲一些我参与的模块，基于整个鸿蒙的座舱的其他模块，大致也了解一些，但也只停留于了解，光我那2-3个模块就已经累的哥们顶不住喽。
+个人业务责任田 智慧语音助手 基于华为手机、平板等其余语音助手的延展，复用在车上。
+当前水平和市场主流也差不了多少，基本的功能，什么各种车控指令，音色切换包括声纹复刻，连续对话，一句话多语义等等，该有的都有。
+开发工作主要是为语音助手做车载适配，毕竟之前的手机平板不可能有什么&amp;quot;打开车窗&amp;quot;之类的指令。
+同时反馈处理各种在系统设计时，未预料到的一些场景，比如说分屏、多物理屏等各种场景下语音指令解析与最终执行的问题，槽位解析错误、语义误闯、拾音准确率等。</description>
+      
+    </item>
+    
+    <item>
+      <title>轨迹跟踪项目</title>
+      <link>https://mangoheart.github.io/english/post/track_maker/</link>
+      <pubDate>Wed, 08 Dec 2021 14:59:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/track_maker/</guid>
+      
+        <description>关于动态目标的轨迹展示 二维平面轨迹展示 项目流程：
+ 一个较大空间内，布置4-6个不同角度的摄像头，分别获取画面 加入云从算法，捕捉动态物体并实现物体聚类（甚至人脸识别) &amp;ndash;该部分由云从提供算法完成 通过视频融合算法，将不同的画面融合成一个图像 利用标定物建立坐标转换体系，通过透视变换将坐标映射至融合后画面 通过对坐标点的过滤与整合，将轨迹按一定需求展现在全景平面图上。  本人参与项目最后一步，得到坐标数据后的过滤整合，并通过算法将大量散点平滑成曲线展示。</description>
+      
+    </item>
+    
+    <item>
+      <title>相关证书</title>
+      <link>https://mangoheart.github.io/english/post/diploma/</link>
+      <pubDate>Tue, 07 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/diploma/</guid>
+      
+        <description>学历证书及成绩单如下 硕士期间 硕士毕业证 硕士成绩单 教育部认证 英国本科 英本毕业证 英本成绩单 国内本科 本科毕业证 本科学位证 本科成绩单 其他证明: 无邪教 无犯罪证明 </description>
+      
+    </item>
+    
+    <item>
+      <title>爬虫项目</title>
+      <link>https://mangoheart.github.io/english/post/crawl/</link>
+      <pubDate>Tue, 07 Dec 2021 17:35:31 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/crawl/</guid>
+      
+        <description>项目简介 本项目由公司前总经理承接，现已移交至复旦大学计算机学院维护(前领导于复旦大学任职教授)。
+由于爬虫属于灰色业务，怕被人拿去之后乱用找我头上所以源码就不贴了，大致思路整明白。 仅供学习参考！
+主体流程如下：
+ 中传悦动搭建数字图片保护平台-https://www.ccmgip.com/zh-CN/ipci 商家入住平台并上传原创图片申请保护 隐者公司通过水印技术对图片进行保护并存入数据库 全网（或针对指定网站）进行爬虫，获取图片并与受保护图片进行比对，对于疑似侵权图片发送预警报告  盈利模式为商家每年上传服务费，平台与隐者公司分成。</description>
+      
+    </item>
+    
+    <item>
+      <title>GOLANG</title>
+      <link>https://mangoheart.github.io/english/post/go/</link>
+      <pubDate>Mon, 06 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/go/</guid>
+      
+        <description>GOLANG 相关 线程调度 GMP模式 M:thread绑定cpu P: processor作为调度器分配goroutine # goamxproces可以预设个数 G: 代表需要处理的进程</description>
+      
+    </item>
+    
+    <item>
+      <title>算法相关</title>
+      <link>https://mangoheart.github.io/english/post/algorithm/</link>
+      <pubDate>Mon, 06 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/algorithm/</guid>
+      
+        <description>算法小结 树 dfs 深搜 遍历并加入res
+class TreeNode: def __init__(self, val=0, left=None, right=None): self.</description>
+      
+    </item>
+    
+    <item>
+      <title>MGMP</title>
+      <link>https://mangoheart.github.io/english/post/mgmp/</link>
+      <pubDate>Mon, 06 Dec 2021 17:35:39 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/mgmp/</guid>
+      
+        <description>MGMP(Multiple goals motion planning) 之前写论文就够瑞的了，这次就多说简单的人话吧。
+给定前提，一个环境中包括确定的站点和路径，机器人需要完成一次路径，在完成所有规定任务的情况下，规划最优路劲。
+最终环境情况如下：
+ 访问站点包括普通的站点与充能站点。 所有站点有开放时窗口。 所有的能量消耗与站点之间的移动消耗均已等价为时间消耗，在环境中提供。 最终选定蒙特卡洛树算法后，调节迭代次数实现该计算程度下的最优解。  对于这个问题的简化，参考来源于约克大学编写的关于OX棋的想法。</description>
+      
+    </item>
+    
+    <item>
+      <title>redis</title>
+      <link>https://mangoheart.github.io/english/post/redis/</link>
+      <pubDate>Sun, 05 Dec 2021 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/redis/</guid>
+      
+        <description>redis 梳理 基本数据类型 五大基本数据类型： string， list， hash， set， sortedset 其他包括： 地理数据类型geospatial， hyperloglog统计，bitmap位图</description>
+      
+    </item>
+    
+    <item>
+      <title>mysql</title>
+      <link>https://mangoheart.github.io/english/post/mysql/</link>
+      <pubDate>Wed, 01 Dec 2021 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/mysql/</guid>
+      
+        <description>mysql 梳理 b树和b+树 b树叶子节点不存储数据，通过多叉树指向底层数据，叶子节点之间不存在链表 b+树枝节点存储数据，底层叶子节点按序排列，且存在双向链表，利于范围查找。
+聚簇索引 与 非聚簇索引 聚簇索引将地址与数据存储在一起，找到地址即可获得数据。（Innodb）
+有隐藏列</description>
+      
+    </item>
+    
+    <item>
+      <title>基础知识相关</title>
+      <link>https://mangoheart.github.io/english/post/basic/</link>
+      <pubDate>Wed, 01 Dec 2021 17:43:12 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/basic/</guid>
+      
+        <description>排序 s = sorted(intervals, key=lambda x:(x[0], -x[1])) 2/10 进制转换 t = 4 b = bin(t) # string, &#39;0b100&#39; o = oct(t) # 八进制 h = hex(t) # 十六进制 n = int(b, 2) # int, 4 迭代器 enumerate d = {&amp;quot;a&amp;quot;:1, &amp;quot;b&amp;quot;:2} for key, value in enumerate(d): print(key, value) l = [123, 456] for ind, elm in enumerate(l) print(ind, elm) 字符和asic码 n = ord(&#39;a&#39;) # n = 97 char = chr(97) # char = &#39;a&#39; </description>
+      
+    </item>
+    
+    <item>
+      <title>其他</title>
+      <link>https://mangoheart.github.io/english/post/others/</link>
+      <pubDate>Tue, 05 Oct 2021 17:45:55 +0800</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/post/others/</guid>
+      
+        <description>离职原因 2024/05 OD外包准备离职 入职的时候差不多22年，五月面试六月初入职，刚好是上海差不多疫情后解封的日志，当时看杭州卷的厉害就准备上海或者苏州看机会。 看了一圈，所谓的正编公司能给的价格还真不如外包，刚好看那些各个平台在狂喷od外包这种垃圾制度，所以也算带着实践求证的心思来看看。 总结下来就是，哥们运气还不错，苏州地域和我们大小部门氛围还可以，但跟正统华子集团比起来，我们这里就多少显得格格不入，其他平台上 对于OD虽然有刻板印象，但确实是事实，所以想了想时间也差不多了，再干下去也没啥发展前景了。 华子的具体内容不太能多说，怕到时候给我251进去，但是已经公开的信息也能看到，车BU准备拆出，具体怎么拆也没人知道。 放出消息后，之前没人搭理的车业务疯狂就开始上量，所在的苏州地域发展方向也开始转变，个人模块从原来的2个模块临时新增了一个 项目业务从原来的部件变成部件+智选+HI，总体来说工作量3~4倍增加并不夸张。之前偶尔还能正常下班，过年回来之后从未双休，晚上10点半 那更是显得理所应当，反正从我的视角这种日子看不到头，生命已经开始被透支的同时也没赚到什么钱。外包干两年也差不多了，所以准备开溜。 具体的工作内容方面这里肯定没办法透露，最安全的其实还真是找个展车，点进去具体看看，这样至少能保证说的都是外界可以公开看到的公开信息 不会惹上什么其他的麻烦。 2022/03 极氪离职 离职证明 极氪离职证明如上，三个月左右过了试用期主动离职，创业公司加半国企背景。 属于是创业公司的当牛做马加班加点要搞，国企那套没什么用的流程制度也要搞，人累心也累，早早跑路了。 2021/08 事业单位离职 这就没啥好说的了，纯纯自己脑子有问题，应届的时候选择了安逸不想多找工作了，也有一部分心思事因为当时有个喜欢的妹在这里的医院实习， 准备过来试试，结果当然就是喜闻乐见了啥也没捞着，所以把最后一个业务交掉之后就跑路了。 </description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mangoheart.github.io/english/archives/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/archives/</guid>
+      
+        <description></description>
+      
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://mangoheart.github.io/english/imprint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://mangoheart.github.io/english/imprint/</guid>
+      
+        <description>Legal Disclosure Information in accordance with the applicable law
+Jane Doe</description>
+      
+    </item>
+    
+  </channel>
+</rss>
